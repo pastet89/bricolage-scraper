@@ -1,0 +1,8 @@
+# Don't track content of these folders
+__pycache__
+bricolage/__pycache__
+
+# Ajax requests & outputs #
+
+*.js
+*.json
