@@ -9,8 +9,8 @@ import re
 import json
 
 class BricolagePipeline(object):
+    count = 0
     def process_item(self, input_item, spider):
-        print ("Inside pipeline! ")
         item = {
         "title" : input_item ["productname"],
         "price" : self.clear_price(input_item ["productcart"]),
@@ -21,6 +21,8 @@ class BricolagePipeline(object):
         "store_availability" : input_item ["availability"],
         }
         print (item)
+        self.count += 1
+        print ("Count", str(self.count))
         return item
         
     def clear_price(self, price):
@@ -44,8 +46,6 @@ class BricolagePipeline(object):
 class JsonWriterPipeline(object):
     def open_spider(self, spider):
         self.file = open('scraped_items.json', 'w')
-        # Your scraped items will be saved in the file 'scraped_items.json'.
-        # You can change the filename to whatever you want.
         self.file.write("[")
 
     def close_spider(self, spider):
