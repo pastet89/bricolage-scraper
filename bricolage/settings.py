@@ -14,7 +14,7 @@ BOT_NAME = 'bricolage'
 SPIDER_MODULES = ['bricolage.spiders']
 NEWSPIDER_MODULE = 'bricolage.spiders'
 
-LOG_LEVEL = 'ERROR' 
+#LOG_LEVEL = 'ERROR' 
 #LOG_FORMAT = '%(levelname)s: %(message)s'
 #LOG_FILE = 'log.txt'
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
