@@ -156,7 +156,12 @@ class QuotesSpider(Spider):
         "longitude": self.long_,
         "CSRFToken": CSRFToken
         }
-        yield FormRequest(self.url(res["actionurl"]), callback=self.store_availability, method='POST', formdata=frmdata)
+        if self.lat is not None:
+            yield FormRequest(self.url(res["actionurl"]), callback=self.store_availability, \
+            method='POST', formdata=frmdata)
+        else:
+            yield self.tmp[self.item_id]
+            self.item_id += 1
     
     def store_availability(self, response):
         """ Scraps the store availability of the item and send the item to the pipeline. """

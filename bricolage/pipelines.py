@@ -25,9 +25,11 @@ class BricolagePipeline(object):
             "characteristics" : {self.clear_data(k) : self.clear_data(v)
             for k, v in input_item ["characteristics"].items()
             },
-            "store_availability" : input_item ["availability"],
+            "store_availability" : input_item["availability"] \
+            if "availability" in input_item else [],
         }
         del input_item
+        print ("Parsed item:", item)
         return item
         
     def clear_price(self, price):
@@ -37,10 +39,10 @@ class BricolagePipeline(object):
         :price: (string) -> the item's price """
         
         price = re.sub(r'([^0-9,.]*)', '', price)
-        seps = [",", "."]
-        if any(sep in price[:-1] for sep in seps):
+        separators = [",", "."]
+        if any(sep in price[:-1] for sep in separators):
             price = price[0:-1]
-        if all(sep in price for sep in seps) or "." in price:
+        if all(sep in price for sep in separators) or "." in price:
             return price
         return price.replace(",", ".")
         
