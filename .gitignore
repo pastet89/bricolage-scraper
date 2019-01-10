@@ -7,6 +7,3 @@ bricolage/__pycache__
 *.js
 *.json
 
-# Gitignore #
-.gitignore
-

@@ -22,7 +22,7 @@ LOG_LEVEL = 'ERROR'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
-
+RETRY_TIMES = 20
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
 # Configure a delay for requests for the same website (default: 0)
