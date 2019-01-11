@@ -56,8 +56,8 @@ class QuotesSpider(Spider):
         callbacs chain. """
         
         self.start_urls = [
-             self.home_url,
-            'https://mr-bricolage.bg/wro/all_responsive.js'
+            self.home_url,
+            self.home_url + '/wro/all_responsive.js'
         ]
         for priority, url in enumerate(self.start_urls):
             yield Request(url=url, priority=priority, callback=self.parse)
