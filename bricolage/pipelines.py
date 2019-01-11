@@ -43,12 +43,13 @@ class BricolagePipeline(object):
         separators = [".", ","]
         if all(s in price for s in separators):
             return price.replace(",", "")
-        elif "." in price and "," not in price:
-            return price
         elif all(s not in price for s in separators):
             return price + ".00"
         elif "," in price and "." not in price:
             return price.replace(",", ".")
+        else:
+            return price
+
             
         
         
