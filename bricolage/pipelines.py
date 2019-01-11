@@ -39,11 +39,18 @@ class BricolagePipeline(object):
         :price: (string) -> the item's price """
         
         price = re.sub(r'([^0-9,.]*)', '', price)
-        if "." == price[-1:]:
-            price = price[0:-1]
-        if "." in price:
+        price = price[:-1] if "." == price[-1:] else price
+        separators = [".", ","]
+        if all(s in price for s in separators):
+            return price.replace(",", "")
+        elif "." in price and "," not in price:
             return price
-        return price.replace(",", ".")
+        elif all(s not in price for s in separators):
+            return price + ".00"
+        elif "," in price and "." not in price:
+            return price.replace(",", ".")
+            
+        
         
     def clear_data(self, string):
         """ Clears the item store availability keys and values.
