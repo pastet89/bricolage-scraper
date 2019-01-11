@@ -39,10 +39,9 @@ class BricolagePipeline(object):
         :price: (string) -> the item's price """
         
         price = re.sub(r'([^0-9,.]*)', '', price)
-        separators = [",", "."]
-        if any(sep in price[:-1] for sep in separators):
+        if "." == price[-1:]:
             price = price[0:-1]
-        if all(sep in price for sep in separators) or "." in price:
+        if "." in price:
             return price
         return price.replace(",", ".")
         
