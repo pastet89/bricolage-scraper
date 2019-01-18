@@ -49,9 +49,6 @@ class BricolagePipeline(object):
             return price.replace(",", ".")
         else:
             return price
-
-            
-        
         
     def clear_data(self, string):
         """ Clears the item store availability keys and values.
