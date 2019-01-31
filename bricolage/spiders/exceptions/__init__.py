@@ -1,4 +1,4 @@
-class BricolageScrapperError(Exception):
+class BricolageScraperError(Exception):
     def __init__(self, message):
         self.message = message
 

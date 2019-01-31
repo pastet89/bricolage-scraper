@@ -1,6 +1,6 @@
 from scrapy import Spider, Request
 from scrapy.http import FormRequest
-from .exceptions import BricolageScrapperError
+from .exceptions import BricolageScraperError
 import re
 import json
 
@@ -229,4 +229,4 @@ class QuotesSpider(Spider):
         if not is_fatal:
             print(msg)
         else:
-            raise BricolageScrapperError(msg)
+            raise BricolageScraperError(msg)
