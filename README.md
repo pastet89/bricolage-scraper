@@ -1,4 +1,4 @@
-## Basic Mr-bricolage.bg items scraper
+## Mr-bricolage.bg items scraper
 
 Based on a given category scraps items from [Mr Bricolage](https://mr-bricolage.bg)
 
