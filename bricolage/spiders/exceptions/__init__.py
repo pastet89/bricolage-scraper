@@ -3,4 +3,4 @@ class BricolageScrapperError(Exception):
         self.message = message
 
     def __str__(self):
-        return f'Scraper alert: {self.message}'
+        return 'Scraper alert: %s' % self.message
