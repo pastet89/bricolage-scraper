@@ -31,7 +31,6 @@ class BricolagePipeline(object):
             "store_availability": input_item["availability"]
             if "availability" in input_item else [],
         }
-        del input_item
         print("Parsed item:", item)
         return item
 
