@@ -148,7 +148,7 @@ class QuotesSpider(Spider):
         The POST request to 'actionurl' for getting the store availability
         """
 
-        CSRFToken = str(response.css('input[name="CSRFToken"]::attr(value)').extract_first())
+        csrft_token = str(response.css('input[name="CSRFToken"]::attr(value)').extract_first())
         selector_keys = '.product-classifications table tr :nth-child(1)'
         selector_vals = '.product-classifications table tr :nth-child(2)'
         characteristics_keys = response.css(selector_keys).extract()
@@ -178,7 +178,7 @@ class QuotesSpider(Spider):
             "entryNumber": res["entryNumber"] if res["entryNumber"] != "None" else "0",
             "latitude": self.lat,
             "longitude": self.long_,
-            "CSRFToken": CSRFToken
+            "CSRFToken": csrft_token
         }
         if self.lat is not None:
             yield FormRequest(self.url(res["actionurl"]),
