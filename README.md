@@ -1,6 +1,6 @@
 ## Mr-bricolage.bg items scraper
 
-Based on a given category scraps items from [Mr Bricolage](https://mr-bricolage.bg)
+Based on a given category scraps items from [Mr Bricolage](https://mr-bricolage.bg).
 
 ### Requirements:
 
