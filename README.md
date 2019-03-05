@@ -9,9 +9,16 @@ Based on a given category scraps items from [Mr Bricolage](https://mr-bricolage.
 
 ### Installation:
 
-Install Scrapy following their [documentation](https://doc.scrapy.org/en/latest/intro/install.html).
-Note: On Debian/Ubuntu if you get a missing ```sqllite3``` error you might need also to install it:
-```sudo apt-get install libsqlite3-dev```.
+Install the dependencies:
+```
+pip3 install -r requirements.txt
+```
+If you have troubles installing Scrapy, check their [documentation](https://doc.scrapy.org/en/latest/intro/install.html).
+You might need some additional dependencies.
+Note: On Debian/Ubuntu if you get a missing ```sqllite3``` error you might need to install ```libsqlite3-dev``` as well:
+```
+sudo apt-get install libsqlite3-dev
+```
 
 ### Usage:
 From the command line run:
