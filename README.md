@@ -21,7 +21,6 @@ sudo apt-get install libsqlite3-dev
 ```
 
 ### Usage:
-
 From the command line run:
 
 ``` 
