@@ -15,18 +15,19 @@ class QuotesSpider(Spider):
 
     Class vars:
 
-    :name: (string) -> spider name, used to run the spider
-    :cat: (string) -> category for scraping
-    :item_id: (int) -> the sequence number of the scrapped items
-    :passed_first_results_page: (bool) -> Indicates if the first
+    :name:                      spider name, used to run the spider
+    :cat:                       category for scraping
+    :item_id:                   the sequence number of the scrapped items
+    :passed_first_results_page: Indicates if the first
                                 page with item results is processed.
                                 Used to prevent double loading of the
                                 same first page in parse_items_pages()
-    :tmp: (list) -> stores the parsed items before sending them to the pipeline
-    :home_url: (string) -> Base url of the website to start scraping from
-    :long_, lat: (NoneType) -> longitude and latitude coordinates,
-                               later set to string type
-    :found_cat: (bool) -> Indicates if the target subcategory is found
+    :tmp:                       stores the parsed items before sending
+                                them to the pipeline
+    :home_url:                  Base url of the website to start scraping from
+    :long_:                     Longitude coordinates
+    :lat:                       Latitude coordinates,
+    :found_cat:                 Indicates if the target subcategory is found
     """
 
     name = "bricolage"
@@ -44,7 +45,7 @@ class QuotesSpider(Spider):
 
         params:
         :param cat: Category name with "-" instead of whitespaces
-        :type cat: string """
+        :type cat: str """
 
         if cat is None:
             err = "\nUsage: scrapy crawl bricolage -a cat=CAT_NAME_WITHOUT_WHITESPACES"
@@ -208,7 +209,7 @@ class QuotesSpider(Spider):
 
         params:
         :param link: The link to which is added the prefix.
-        :type link: string """
+        :type link: str """
 
         return self.home_url + link
 
@@ -220,7 +221,7 @@ class QuotesSpider(Spider):
         params:
 
         :param msg: The error message
-        :type msg: string
+        :type msg: str
         :param is_fatal: if True, stops the script execution
                          by raising an error, if False, goes on
         :type is_fatal: bool """

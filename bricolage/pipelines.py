@@ -39,7 +39,7 @@ class BricolagePipeline(object):
 
         params:
         :param price: the item's price
-        :type price: string """
+        :type price: str """
 
         price = re.sub(r'([^0-9,.]*)', '', price)
         price = price[:-1] if "." == price[-1:] else price
@@ -58,7 +58,7 @@ class BricolagePipeline(object):
         
         params:
         :param string: the string for processing
-        :type string: string """
+        :type string: str """
         
         string = re.sub(r'[\s]+', '', string)
         return re.search('>([^<>]*)<', string).group(1)
@@ -68,7 +68,7 @@ class BricolagePipeline(object):
         
         params:
         :param img_str: the string, containing the img link
-        :type img_str: string """
+        :type img_str: str """
 
         img_str = re.search('src="([^"]+)"', img_str).group(1)
         return 'https://mr-bricolage.bg'+img_str
