@@ -11,7 +11,7 @@ Based on a given category scraps items from [Mr Bricolage](https://mr-bricolage.
 
 Install the dependencies:
 ```
-pip3 install -r requirements.txt
+pip install -r requirements.txt
 ```
 If you have troubles installing Scrapy, check their [documentation](https://doc.scrapy.org/en/latest/intro/install.html).
 You might need some additional dependencies.
