@@ -67,7 +67,7 @@ RETRY_TIMES = 20
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
     'bricolage.pipelines.BricolagePipeline': 300,
-    'bricolage.pipelines.JsonWriterPipeline': 300,
+    'bricolage.pipelines.JsonWriterPipeline': 400,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
